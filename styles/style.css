@@ -2,4 +2,426 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--bg-color);
+  padding: 0 10px;
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  position: relative;
+  height: 100vh;
+  min-height: var(--header-min-height, 668px);
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-columns: 1fr;
+  align-content: space-between;
+  padding-bottom: 66px;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+
+.decorated-zone::before {
+  top: 10px;
+  right: 0;
+  border-top: 2px solid var(--title-color);
+  border-right: 2px solid var(--title-color);
+}
+
+.decorated-zone::after {
+  bottom: 10px;
+  left: 0;
+  border-bottom: 2px solid var(--title-color);
+  border-left: 2px solid var(--title-color);
+}
+
+.header__rec {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: var(--accent-color);
+}
+
+.header__rec::after {
+  content: '';
+  display: inline-block;
+  margin-left: 10px;
+  width: 9px;
+  height: 9px;
+  background: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  border-radius: 50%;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: start;
+}
+
+.header__theme-menu-list {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.header__theme-menu-button {
+  background: transparent;
+  border: none;
+  color: var(--title-color);
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  height: 26px;
+  padding: 2px 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--title-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--title-color-50);
+}
+
+.header__theme-menu-button:focus {
+  border: none;
+  border-bottom: 1px solid;
+}
+
+.header__title {
+  margin-top: 68px;
+  margin-bottom: 55px;
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  color: var(--main-title-color);
+  text-shadow: 4px 4px 0px var(--accent-color);
+}
+
+.header__description {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  align-self: end;
+  justify-self: end;
+}
+
+.header__description span {
+  display: block;        /* каждая фраза с новой строки */
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  margin-top: 40px;
+  display: grid;
+  gap: 50px;
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.section__title {
+  color: var(--title-color);
+  margin: 0;
+}
+
+.section-content {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  display: grid;
+  gap: 10px;
+}
+
+.card__title {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  margin: 0;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--text-on-accent);
+}
+
+.card__text {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.46px;
+  color: var(--text-color);
+}
+
+.text-link {
+  text-decoration: none;
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+.text-link:hover {
+  border-bottom: 1px solid var(--accent-color);
+  line-height: 1;
+  padding-bottom: 0.5px;
+}
+
+.small-title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.section_type_gallery {
+  gap: 10px;
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+}
+
+.gallery__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  margin-top: 40px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  min-height: var(--header-min-height, 668px);
+  padding: 286px 13;
+}
+
+.footer__title {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+  color: var(--main-title-color);
+  text-align: center;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  margin: 0;
+}
+
+.page.theme_light .header__rec {
+  display: none;
+}
+
+
+@media (min-width: 768px) {
+
+  .page {
+    padding: 0;
+  }
+
+  .decorated-zone::before {
+    right: 20px;
+    top: 20px;
+
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .header__rec {
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+
+  .header__theme-menu-list {
+    margin-right: 20px;
+    margin-top: 192px;
+  }
+
+  .header__theme-menu-button {
+    color: var(--text-color);
+  }
+
+  .header__title {
+    margin-top: 173px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    justify-self: start;
+  }
+
+  .header__description {
+    margin-right: 20px;
+    margin-bottom: 118px;
+    max-width: 364px;
+  }
+
+  .content {
+    margin-top: 60px;
+    display: grid;
+    gap: 80px;
+  }
+
+  /* Секции с заголовком сбоку */
+  .section--side-title {
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+    align-items: start;
+    padding: 0 20px;
+  }
+
+  .section--side-title > .section__title {
+    grid-column: 1;
+    justify-self: start;
+    align-self: start;
+    margin: 0;
+  }
+
+  .section--side-title > .section__content {
+    grid-column: 2;
+    display: grid;
+    gap: 20px;
+  }
+
+  /* Секции с заголовком сверху */
+  .section--top-title {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    align-items: start;
+    grid-template-areas:
+      "title . ."
+      "content content content";
+  }
+
+  .section--top-title > .section__title {
+    grid-area: title;      /* всегда в первой колонке первой строки */
+    margin: 0;
+    justify-self: start;
+    align-self: start;
+  }
+
+  .section--top-title > .section__content {
+    grid-area: content;    /* целая строка под заголовком на всю ширину */
+    display: grid;
+    gap: 20px;
+  }
+
+  .section--top-title > :not(.section__title):not(.section__content) {
+    grid-column: 1 / -1;   /* растягиваем элемент на всю ширину */
+  }
+
+  .footer {
+    margin-top: 60px;
+    padding: 463px 204px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .section {
+    padding: 0 20px;
+  }
+
+  .section_type_gallery {
+    gap: 20px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .gallery > *:nth-child(1) { grid-column: 1 / span 2; grid-row: 1 / span 1; }
+  .gallery > *:nth-child(2) { grid-column: 3 / span 1; grid-row: 1 / span 2; }
+  .gallery > *:nth-child(3) { grid-column: 1 / span 1; grid-row: 2 / span 2; }
+  .gallery > *:nth-child(4) { grid-column: 2 / span 1; grid-row: 2 / span 1; }
+  .gallery > *:nth-child(5) { grid-column: 2 / span 2; grid-row: 3 / span 1; }
+}
+
+@media (min-width: 1024px) {
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-top: 273px;
+  }
+
+  .footer {
+    padding: 320px 275px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .header__description {
+    margin-right: 20px;
+    margin-bottom: 70px;
+    max-width: 491px;
+  }
+
+  .section-content-columns {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+
+  .section--side-title {
+    grid-template-columns: 1fr 2fr;
+    column-gap: 10px;
+    align-items: start;
+    padding: 0 20px;
+  }
 }
