@@ -9,4 +9,14 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+    --bg-color: #000028;
+    --background-image: url('../images/cover-image-dark.png');
+    --accent-color: #FF0070;
+    --title-color: #FF0070;
+    --title-color-50: #FF007080;
+    --text-color: #F1B2CE;
+    --text-on-accent: #000028;
+    --main-title-color: #DB00FF;
+    --header-min-height: 668px;
+    --rec-display: inline-flex;
 }
