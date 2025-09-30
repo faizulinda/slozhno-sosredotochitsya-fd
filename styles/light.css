@@ -13,11 +13,10 @@
   --background-image: url('../images/cover-image-light.png');
   --accent-color: #FF8DCB;
   --title-color: #353430;
-  --title-color-50: #35343080;
+  --hover-title-color-40: #35343066;
   --text-color: #353430;
   --text-on-accent: #353430;
   --main-title-color: #FFC2E6;
-  --header-min-height: 668px;
   --rec-display: none;
 }
 
@@ -27,11 +26,10 @@
     --background-image: url('../images/cover-image-light.png');
     --accent-color: #FF8DCB;
     --title-color: #353430;
-    --title-color-50: #35343080;
+    --hover-title-color-40: #35343066;
     --text-color: #353430;
     --text-on-accent: #353430;
     --main-title-color: #FFC2E6;
-    --header-min-height: 668px;
     --rec-display: none;
   }
 
